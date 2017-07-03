@@ -1,16 +1,5 @@
-.vs/TestEtoWebkit/v15
 packages
 .vs
-TestEtoWebkit/obj
-TestEtoWebkitMacOS/obj
-TestEtoWebkitMacOS/bin
-TestEtoWebkit/bin
-TestEtoWebkitWindows/obj
-TestEtoWebkitWindows/bin
-TestEtoWebkitWindowsR5/obj
-TestEtoWebkitWindowsR6/bin
-TestEtoWebkitWindowsR6/obj
-TestEtoWebkitWindowsR5/bin
 TestWebUImacOS/bin
 TestWebUImacOS/obj
 TestWebUIWinR5/bin
