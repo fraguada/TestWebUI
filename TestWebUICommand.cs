@@ -1,17 +1,17 @@
-﻿using Rhino;
+﻿﻿﻿using Rhino;
 using Rhino.Commands;
 using System.IO;
 using System.Reflection;
 
-namespace TestEtoWebkit
+namespace TestWebUI
 {
-    public class TestEtoWebkitCommand : Command
+    public class TestWebUICommand : Command
     {
 
         public string PathResources { get; set; }
         public string IndexPath { get; set; }
 
-        public TestEtoWebkitCommand()
+        public TestWebUICommand()
         {
             // Rhino only creates one instance of each command class defined in a
             // plug-in, so it is safe to store a refence in a static property.
@@ -19,7 +19,7 @@ namespace TestEtoWebkit
         }
 
         ///<summary>The only instance of this command.</summary>
-        public static TestEtoWebkitCommand Instance
+        public static TestWebUICommand Instance
         {
             get; private set;
         }
@@ -27,7 +27,7 @@ namespace TestEtoWebkit
         ///<returns>The command name as it appears on the Rhino command line.</returns>
         public override string EnglishName
         {
-            get { return "TestEtoWebkitCommand"; }
+            get { return "TestWebUICommand"; }
         }
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
@@ -39,23 +39,21 @@ namespace TestEtoWebkit
             PathResources = Path.Combine(assemblyPath, "app");
             IndexPath = Path.Combine(PathResources, "index.html");
 
-            dynamic form;
-
 #if ETO
 
-            form = new EtoForm();
+            var form = new EtoForm();
+            form.Topmost = true;
 
 #elif WINR5
-            form = new WinForm();
-#endif
-            form.ShowInTaskbar = true;
+            var form = new WinForm();
             form.TopMost = true;
-            form.BringToFront();
+#endif
 
-            form.SetWVUrl(IndexPath);
-            form.Show();
-
-            return Result.Success;
+            form.ShowInTaskbar = true;
+			form.BringToFront();
+			form.SetWVUrl(IndexPath);
+			form.Show();
+			return Result.Success;
         }
     }
 }

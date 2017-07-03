@@ -3,7 +3,7 @@ using Eto.Forms;
 using System;
 using Newtonsoft.Json;
 
-namespace TestEtoWebkit
+namespace TestWebUI
 {
     public class EtoForm : Form
     {

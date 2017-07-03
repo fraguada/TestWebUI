@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace TestEtoWebkit
+namespace TestWebUI
 {
     public partial class WinForm : Form
     {

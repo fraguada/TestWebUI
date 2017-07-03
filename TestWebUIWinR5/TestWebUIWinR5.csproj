@@ -1,25 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug32</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{14E17074-9E4E-4AB8-A49B-8A2AB15B017D}</ProjectGuid>
+    <ProjectGuid>{A8591174-0599-433C-9B01-2A51C2B877AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestEtoWebkit</RootNamespace>
-    <AssemblyName>TestEtoWebkit</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>TestEtoWebkitWindowsR5</RootNamespace>
+    <AssemblyName>TestEtoWebkitWindowsR5</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ETO</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WINR5</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINR5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
@@ -27,48 +36,43 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;ETO</DefineConstants>
+    <DefineConstants>TRACE;WINR5</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="RhinoCommon">
-      <HintPath>C:\Program Files\Rhino WIP\System\rhinocommon.dll</HintPath>
+      <HintPath>c:\Program Files\Rhinoceros 5 (64-bit)\System\rhinocommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Eto">
-      <HintPath>C:\Program Files\Rhino WIP\System\Eto.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Rhino.UI">
-      <HintPath>C:\Program Files\Rhino WIP\System\Rhino.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\EtoForm.cs">
-      <Link>EtoForm.cs</Link>
-    </Compile>
-    <Compile Include="..\TestEtoWebkitCommand.cs">
-      <Link>TestEtoWebkitCommand.cs</Link>
-    </Compile>
-    <Compile Include="..\TestEtoWebkitPlugIn.cs">
-      <Link>TestEtoWebkitPlugIn.cs</Link>
-    </Compile>
     <Compile Include="..\TestObject.cs">
       <Link>TestObject.cs</Link>
     </Compile>
+    <Compile Include="..\TestWebUICommand.cs">
+      <Link>TestWebUICommand.cs</Link>
+    </Compile>
+    <Compile Include="..\TestWebUIPlugIn.cs">
+      <Link>TestWebUIPlugIn.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="WinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm.Designer.cs">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\app\app.js">
@@ -79,6 +83,14 @@
       <Link>app\index.html</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WinForm.resx">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -92,11 +104,17 @@
     <PostBuildEvent>Copy "$(TargetPath)" "$(TargetDir)$(ProjectName).rhp"
 Erase "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
+    <StartArguments>
+    </StartArguments>
+    <StartAction>Program</StartAction>
+    <StartProgram>c:\Program Files (x86)\Rhinoceros 5\System\Rhino4.exe</StartProgram>
+  </PropertyGroup>
   <PropertyGroup>
     <FallbackCulture>en-US</FallbackCulture>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartProgram>C:\Program Files\Rhino WIP\System\Rhino.exe</StartProgram>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <StartProgram>c:\Program Files\Rhinoceros 5 (64-bit)\System\Rhino.exe</StartProgram>
     <StartArguments>
     </StartArguments>
     <StartAction>Program</StartAction>

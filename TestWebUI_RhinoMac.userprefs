@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{7FFD5395-CC1F-4000-82F6-40E4E019A9EC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestWebUICommand.cs">
+    <Files>
+      <File FileName="TestWebUICommand.cs" Line="1" Column="1" />
+      <File FileName="EtoForm.cs" Line="1" Column="1" />
+      <File FileName="TestObject.cs" Line="1" Column="1" />
+      <File FileName="TestWebUIPlugIn.cs" Line="22" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TestWebUI_RhinoMac" expanded="True">
+            <Node name="TestWebUImacOS" expanded="True" selected="True">
+              <Node name="References" expanded="True" />
+              <Node name="app" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TestWebUImacOS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

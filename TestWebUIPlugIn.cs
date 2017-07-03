@@ -1,6 +1,6 @@
 ﻿using Rhino.PlugIns;
 
-namespace TestEtoWebkit
+namespace TestWebUI
 {
     ///<summary>
     /// <para>Every RhinoCommon .rhp assembly must have one and only one PlugIn-derived
@@ -10,16 +10,16 @@ namespace TestEtoWebkit
     /// attributes in AssemblyInfo.cs (you might need to click "Project" ->
     /// "Show All Files" to see it in the "Solution Explorer" window).</para>
     ///</summary>
-    public class TestEtoWebkitPlugIn : Rhino.PlugIns.PlugIn
+    public class TestWebUIPlugIn : Rhino.PlugIns.PlugIn
 
     {
-        public TestEtoWebkitPlugIn()
+        public TestWebUIPlugIn()
         {
             Instance = this;
         }
 
         ///<summary>Gets the only instance of the TestEtoWebkitPlugIn plug-in.</summary>
-        public static TestEtoWebkitPlugIn Instance
+        public static TestWebUIPlugIn Instance
         {
             get; private set;
         }

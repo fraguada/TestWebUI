@@ -1,4 +1,4 @@
-﻿namespace TestEtoWebkit
+﻿namespace TestWebUI
 {
     partial class WinForm
     {

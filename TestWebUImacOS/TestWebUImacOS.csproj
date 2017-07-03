@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7FFD5395-CC1F-4000-82F6-40E4E019A9EC}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TestEtoWebkitmacOS</RootNamespace>
-    <AssemblyName>TestEtoWebkitmacOS</AssemblyName>
+    <RootNamespace>TestWebUI</RootNamespace>
+    <AssemblyName>TestWebUImacOS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,8 +29,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RhinoCommon">
-      <HintPath>..\..\..\..\..\..\..\..\..\Applications\Rhinoceros.app\Contents\Resources\RhinoCommon.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Applications\RhinoWIP.app\Contents\Resources\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Rhino.UI">
@@ -41,22 +44,19 @@
       <HintPath>..\..\..\..\..\..\..\..\..\Applications\Rhinoceros.app\Contents\Resources\Eto.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\EtoForm.cs">
       <Link>EtoForm.cs</Link>
     </Compile>
-    <Compile Include="..\TestEtoWebkitCommand.cs">
-      <Link>TestEtoWebkitCommand.cs</Link>
-    </Compile>
-    <Compile Include="..\TestEtoWebkitPlugIn.cs">
-      <Link>TestEtoWebkitPlugIn.cs</Link>
-    </Compile>
     <Compile Include="..\TestObject.cs">
       <Link>TestObject.cs</Link>
+    </Compile>
+    <Compile Include="..\TestWebUICommand.cs">
+      <Link>TestWebUICommand.cs</Link>
+    </Compile>
+    <Compile Include="..\TestWebUIPlugIn.cs">
+      <Link>TestWebUIPlugIn.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,13 +64,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\app\app.js">
-      <Link>app\app.js</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="..\app\index.html">
       <Link>app\index.html</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\app\app.js">
+      <Link>app\app.js</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
