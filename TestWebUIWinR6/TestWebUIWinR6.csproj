@@ -53,16 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\EtoForm.cs">
+    <Compile Include="..\src\EtoForm.cs">
       <Link>EtoForm.cs</Link>
     </Compile>
-    <Compile Include="..\TestObject.cs">
+    <Compile Include="..\src\TestObject.cs">
       <Link>TestObject.cs</Link>
     </Compile>
-    <Compile Include="..\TestWebUICommand.cs">
+    <Compile Include="..\src\TestWebUICommand.cs">
       <Link>TestWebUICommand.cs</Link>
     </Compile>
-    <Compile Include="..\TestWebUIPlugIn.cs">
+    <Compile Include="..\src\TestWebUIPlugIn.cs">
       <Link>TestWebUIPlugIn.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
