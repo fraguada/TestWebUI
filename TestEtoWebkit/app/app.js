@@ -1,21 +1,18 @@
-﻿function SayHi(name)
+﻿var payload;
+function SayHi(name)
 {
-    alert("Hi there " + name);
-
-    return "some hi";
-};
+    payload = JSON.stringify({returnValue: "some hi", numbers: [1000,2000]});
+}
 
 function ReturnData(num)
 {
-
-    alert("Data!");
-
     var arrayNum = [];
     for (var i = 0; i < num; i++)
         arrayNum.push(i);
 
-    return "something data";
-};
+    payload = JSON.stringify({returnValue: "some data", numbers: arrayNum});
+
+}
 
 function GotoAnother(otherUrl)
 {

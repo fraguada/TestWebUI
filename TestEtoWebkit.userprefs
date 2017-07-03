@@ -1,18 +1,8 @@
 ﻿<Properties StartupConfiguration="{7FFD5395-CC1F-4000-82F6-40E4E019A9EC}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestEtoWebkit/app/index.html">
-    <Files>
-      <File FileName="TestEtoWebkit/EtoForm.cs" Line="58" Column="26" />
-      <File FileName="TestEtoWebkit/TestEtoWebkitCommand.cs" Line="40" Column="1" />
-      <File FileName="TestEtoWebkit/app/app.js" Line="1" Column="1" />
-      <File FileName="TestEtoWebkit/app/index.html" Line="9" Column="13" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/luis.fraguada/Dropbox/Projects/CodeConsultant/McNeel/Prototypes/TestEtoWebkit/TestEtoWebkit/EtoForm.cs" relfile="TestEtoWebkit/EtoForm.cs" line="63" column="1" />
-      <Breakpoint file="/Users/luis.fraguada/Dropbox/Projects/CodeConsultant/McNeel/Prototypes/TestEtoWebkit/TestEtoWebkit/EtoForm.cs" relfile="TestEtoWebkit/EtoForm.cs" line="69" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="TestEtoWebkit/EtoForm.cs" line="61" offsetX="537" offsetY="900" expression="result" liveUpdate="False" />

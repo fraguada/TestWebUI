@@ -60,18 +60,22 @@ namespace TestEtoWebkit
 
                 if (e.Uri.ToString().Contains("sayhi"))
                 {
-                    result = Wv.ExecuteScript("SayHi(\"Luis\");");
-                    //deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
+                    result = Wv.ExecuteScript("SayHi(\"Luis\"); return payload;");
+                    deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
                 }
 
                 if (e.Uri.ToString().Contains("returndata"))
                 {
-                    result = Wv.ExecuteScript("ReturnData(1000);");
-                    //deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
+                    result = Wv.ExecuteScript("ReturnData(1000); return payload;");
+                    deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
                 }
 
-                Rhino.RhinoApp.WriteLine(result);
+                Rhino.RhinoApp.WriteLine(deserializedObject.ReturnValue);
 
+                foreach(var num in deserializedObject.Numbers)
+                    Rhino.RhinoApp.Write("{0}{1}", num, ",");
+
+                Rhino.RhinoApp.WriteLine();
 
             }
 
