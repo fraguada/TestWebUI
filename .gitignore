@@ -1,0 +1,7 @@
+.vs/TestEtoWebkit/v15
+packages
+.vs
+TestEtoWebkit/obj
+TestEtoWebkitMacOS/obj
+TestEtoWebkitMacOS/bin
+TestEtoWebkit/bin
