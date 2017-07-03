@@ -35,17 +35,20 @@ namespace TestEtoWebkit
                 var result = "";
                 var deserializedObject = new TestObject();
 
+                Object[] objArray = new Object[1];
+                
+
                 if (e.Url.ToString().Contains("sayhi"))
                 {
-                    result = Wv.Document.InvokeScript("SayHi(\"Luis\"); return payload;").ToString();
-                    //result = Wv.ExecuteScript("SayHi(\"Luis\"); return payload;");
+                    objArray[0] = (Object)"Luis";
+                    result = Wv.Document.InvokeScript("SayHi", objArray).ToString();
                     deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
                 }
 
                 if (e.Url.ToString().Contains("returndata"))
                 {
-                    result = Wv.Document.InvokeScript("ReturnData(1000); return payload;").ToString();
-                    //result = Wv.ExecuteScript("ReturnData(1000); return payload;");
+                    objArray[0] = (Object)1000;
+                    result = Wv.Document.InvokeScript("ReturnData", objArray).ToString();
                     deserializedObject = JsonConvert.DeserializeObject<TestObject>(result);
                 }
 

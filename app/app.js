@@ -1,7 +1,9 @@
 ﻿var payload;
 function SayHi(name)
 {
-    payload = JSON.stringify({returnValue: "some hi", numbers: [1000,2000]});
+    payload = JSON.stringify({ returnValue: "some hi", numbers: [1000, 2000] });
+
+    return payload;
 }
 
 function ReturnData(num)
@@ -10,7 +12,9 @@ function ReturnData(num)
     for (var i = 0; i < num; i++)
         arrayNum.push(i);
 
-    payload = JSON.stringify({returnValue: "some data", numbers: arrayNum});
+    payload = JSON.stringify({ returnValue: "some data", numbers: arrayNum });
+
+    return payload;
 
 }
 
