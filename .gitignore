@@ -5,3 +5,5 @@ TestEtoWebkit/obj
 TestEtoWebkitMacOS/obj
 TestEtoWebkitMacOS/bin
 TestEtoWebkit/bin
+TestEtoWebkitWindows/obj
+TestEtoWebkitWindows/bin

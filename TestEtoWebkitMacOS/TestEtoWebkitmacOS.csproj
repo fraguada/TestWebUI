@@ -45,32 +45,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\TestEtoWebkit\EtoForm.cs">
+    <Compile Include="..\EtoForm.cs">
       <Link>EtoForm.cs</Link>
     </Compile>
-    <Compile Include="..\TestEtoWebkit\TestEtoWebkitCommand.cs">
+    <Compile Include="..\TestEtoWebkitCommand.cs">
       <Link>TestEtoWebkitCommand.cs</Link>
     </Compile>
-    <Compile Include="..\TestEtoWebkit\TestEtoWebkitPlugIn.cs">
+    <Compile Include="..\TestEtoWebkitPlugIn.cs">
       <Link>TestEtoWebkitPlugIn.cs</Link>
     </Compile>
-    <Compile Include="..\TestEtoWebkit\TestObject.cs">
+    <Compile Include="..\TestObject.cs">
       <Link>TestObject.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\TestEtoWebkit\app\app.js">
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\app\app.js">
       <Link>app\app.js</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\TestEtoWebkit\app\index.html">
+    <Content Include="..\app\index.html">
       <Link>app\index.html</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
