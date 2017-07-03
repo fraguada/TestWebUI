@@ -1,5 +1,6 @@
 packages
 .vs
+*.userprefs
 TestWebUImacOS/bin
 TestWebUImacOS/obj
 TestWebUIWinR5/bin
