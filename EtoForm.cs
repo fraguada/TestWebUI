@@ -19,8 +19,6 @@ namespace TestEtoWebkit
             Wv.DocumentLoading += E_DocumentLoading;
             Wv.DocumentLoaded += E_DocumentLoaded;
 
-    
-
             var layout = new DynamicLayout();
             layout.Padding = new Padding(0);
             layout.BeginHorizontal();

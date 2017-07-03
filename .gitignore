@@ -7,3 +7,7 @@ TestEtoWebkitMacOS/bin
 TestEtoWebkit/bin
 TestEtoWebkitWindows/obj
 TestEtoWebkitWindows/bin
+TestEtoWebkitWindowsR5/obj
+TestEtoWebkitWindowsR6/bin
+TestEtoWebkitWindowsR6/obj
+TestEtoWebkitWindowsR5/bin

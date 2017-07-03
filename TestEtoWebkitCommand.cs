@@ -39,15 +39,21 @@ namespace TestEtoWebkit
             PathResources = Path.Combine(assemblyPath, "app");
             IndexPath = Path.Combine(PathResources, "index.html");
 
-            var form = new EtoForm();
+            dynamic form;
 
+#if ETO
+
+            form = new EtoForm();
+
+#elif WINR5
+            form = new WinForm();
+#endif
             form.ShowInTaskbar = true;
-            form.Topmost = true;
+            form.TopMost = true;
             form.BringToFront();
-            form.ShowInTaskbar = true;
+
             form.SetWVUrl(IndexPath);
             form.Show();
-
 
             return Result.Success;
         }
