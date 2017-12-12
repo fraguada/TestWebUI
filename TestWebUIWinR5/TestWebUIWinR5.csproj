@@ -8,8 +8,8 @@
     <ProjectGuid>{A8591174-0599-433C-9B01-2A51C2B877AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestEtoWebkitWindowsR5</RootNamespace>
-    <AssemblyName>TestEtoWebkitWindowsR5</AssemblyName>
+    <RootNamespace>TestWebUi</RootNamespace>
+    <AssemblyName>TestWebUIWinR5</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\src\PipelineObject.cs">
+      <Link>PipelineObject.cs</Link>
+    </Compile>
     <Compile Include="..\src\TestObject.cs">
       <Link>TestObject.cs</Link>
     </Compile>

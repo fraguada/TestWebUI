@@ -22,3 +22,14 @@ function GotoAnother(otherUrl)
 {
     window.location.replace(otherUrl);
 }
+
+function IncreaseCounter()
+{
+    window.external.Count(true);
+    document.getElementById('display').innerHTML = window.external.Counter;
+}
+
+function DecreaseCounter() {
+    window.external.Count(false);
+    document.getElementById('display').innerHTML = window.external.Counter;
+}

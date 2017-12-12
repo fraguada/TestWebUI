@@ -15,6 +15,7 @@ namespace TestWebUI
             Wv = webBrowser;
             Wv.DocumentCompleted += E_DocumentLoaded;
             Wv.Navigating += E_DocumentLoading;
+            Wv.ObjectForScripting = new Pipeline();
         }
 
         public void SetWVUrl(string url)
